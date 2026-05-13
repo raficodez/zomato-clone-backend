@@ -3,7 +3,9 @@ const app = express();
 
 const userRoute = require('./routes/userRoutes')
 
-app.use('/user',userRoute)
+app.use(express.json());
+
+app.use('/user', userRoute)
 
 app.get("/", (req, res) => {
     res.send("Zomato Backend Started");
