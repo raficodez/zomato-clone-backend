@@ -1,7 +1,8 @@
 const registerUser = (req, res) => {
     let { name, email } = req.body;
 
-    res.json({
+    res.status(201).json({
+        success: "true",
         message: "User registered successfully",
         user: {
             name,
