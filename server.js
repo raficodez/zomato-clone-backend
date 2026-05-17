@@ -3,6 +3,7 @@ const dotenv = require("dotenv");
 
 const connectDB = require("./config/db");
 const userRoute = require('./routes/userRoutes');
+const  restaurantRoute = require("./routes/restaurantRoutes");
 
 dotenv.config();
 
@@ -13,6 +14,7 @@ const app = express();
 app.use(express.json());
 
 app.use('/user', userRoute);
+app.use('/restaurant', restaurantRoute);
 
 app.get("/", (req, res) => {
     res.send("Zomato Backend Started");
